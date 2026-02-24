@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting BRITC">
+    <title>Thank You - BRITC</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .thank-you-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #28a745;
+            color: white;
+            font-size: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .thank-you-container h2 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-container p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .confirmation-details {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .confirmation-details h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .confirmation-details ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .confirmation-details li {
+            padding: 0.75rem 0;
+            color: #666;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .confirmation-details li:last-child {
+            border-bottom: none;
+        }
+
+        .confirmation-details li strong {
+            color: #003366;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #0066cc;
+            color: white;
+            border: 2px solid #0066cc;
+        }
+
+        .btn-primary:hover {
+            background-color: #0055a5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f8ff;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #e8f4f8;
+            border-radius: 8px;
+        }
+
+        .contact-info h4 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 2rem 1rem;
+            }
+
+            .thank-you-container h2 {
+                font-size: 2rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="BRITC_Logo.webp" alt="BRITC Logo" class="logo" onerror="this.style.display='none'">
+                    <div class="company-name">
+                        <h1>Brooks Innovation and Technology Consulting LLC</h1>
+                        <p class="tagline">Engineering American Solutions with Integrity</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Concepts.html">Concepts</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <div class="success-icon">✓</div>
+            
+            <h2>Thank You!</h2>
+            
+            <p>We've received your message and appreciate your interest in Brooks Innovation and Technology Consulting.</p>
+
+            <div class="confirmation-details">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    <li><strong>Step 1:</strong> You'll receive a confirmation email shortly</li>
+                    <li><strong>Step 2:</strong> Our team will review your inquiry within 24 business hours</li>
+                    <li><strong>Step 3:</strong> A BRITC representative will contact you to discuss next steps</li>
+                    <li><strong>Step 4:</strong> We'll schedule a consultation to explore partnership opportunities</li>
+                </ul>
+            </div>
+
+            <p><strong>Response Time:</strong> We typically respond within 24 business hours. For urgent inquiries, please call us directly.</p>
+
+            <div class="button-group">
+                <a href="index.html" class="btn btn-primary">Return to Home</a>
+                <a href="Concepts.html" class="btn btn-secondary">View Our Concepts</a>
+            </div>
+
+            <div class="contact-info">
+                <h4>Need Immediate Assistance?</h4>
+                <p><strong>Email:</strong> brooksinnovationandtechnologyc@gmail.com</p>
+                <p><strong>Phone:</strong> 1 (224) 237-6324</p>
+                <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM EST</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Brooks Innovation and Technology Consulting LLC</h4>
+                    <p>Founded November 21, 2025 | Hawaii</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Concepts.html">Concepts</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: brooksinnovationandtechnologyc@gmail.com</p>
+                    <p>Phone: 1 (224) 237-6324</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Brooks Innovation and Technology Consulting LLC (BRITC). All rights reserved.</p>
+                <p class="legal-notice">All content on this website is proprietary and protected under U.S. copyright law and other applicable intellectual property laws. No portion of this website or its materials may be reproduced, distributed, or used without prior written permission from BRITC.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

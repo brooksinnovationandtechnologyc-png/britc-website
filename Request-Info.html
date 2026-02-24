@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request product information from BRITC">
+    <title>Request Information - BRITC</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="BRITC_Logo.webp" alt="BRITC Logo" class="logo" onerror="this.style.display='none'">
+                    <div class="company-name">
+                        <h1>Brooks Innovation and Technology Consulting LLC</h1>
+                        <p class="tagline">Engineering American Solutions with Integrity</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Concepts.html">Concepts</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Request Product Information</h2>
+                <p class="subtitle">We'll respond to your inquiry within 24 hours</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div id="form-content">
+                        <div class="product-info">
+                            <p><strong>Product:</strong> <span id="product-name">Loading...</span></p>
+                        </div>
+
+                        <form id="info-request-form" class="info-form" action="https://formspree.io/f/xkovqlqb" method="POST">
+                            
+                            <!-- FORMSPREE CONFIGURATION -->
+                            <!-- Dynamic subject line with product name -->
+                            <input type="hidden" name="_subject" id="form-subject" value="New BRITC Product Inquiry">
+                            
+                            <!-- Product name (populated by JavaScript) -->
+                            <input type="hidden" name="product" id="product-field" value="">
+                            
+                            <!-- Honeypot spam protection -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                            
+                            <!-- Optional: Redirect after submission -->
+                            <!-- <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> -->
+
+                            <div class="form-group">
+                                <label for="company-name">Company/Organization Name <span class="required">*</span></label>
+                                <input type="text" id="company-name" name="company-name" required placeholder="e.g., Department of Defense, Acme Corporation">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="contact-name" required placeholder="First and Last Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-title">Your Title/Position <span class="required">*</span></label>
+                                <input type="text" id="contact-title" name="contact-title" required placeholder="e.g., Procurement Officer, Program Manager">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="contact-email" required placeholder="your.email@organization.gov">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="contact-phone" name="contact-phone" required placeholder="(555) 123-4567">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organization-type">Organization Type <span class="required">*</span></label>
+                                <select id="organization-type" name="organization-type" required>
+                                    <option value="">Select...</option>
+                                    <option value="federal-government">Federal Government Agency</option>
+                                    <option value="state-government">State/Local Government</option>
+                                    <option value="defense-contractor">Defense Contractor</option>
+                                    <option value="private-corporation">Private Corporation</option>
+                                    <option value="research-institution">Research Institution</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inquiry-details">Additional Information or Questions</label>
+                                <textarea id="inquiry-details" name="inquiry-details" rows="5" placeholder="Please provide any specific requirements, timeline, or questions you have about this product..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="nda-agreement" name="nda-agreement" value="yes">
+                                <label for="nda-agreement">I am willing to sign an NDA for detailed technical specifications</label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="urgent-request" name="urgent-request" value="yes">
+                                <label for="urgent-request">This is an urgent request (we'll prioritize your inquiry)</label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                                <a href="Concepts.html" class="btn btn-secondary">Back to Products</a>
+                            </div>
+                            
+                            <!-- Status message -->
+                            <div id="form-status"></div>
+                        </form>
+                    </div>
+
+                    <div id="confirmation-message" class="confirmation-message" style="display: none;">
+                        <div class="confirmation-content">
+                            <div class="confirmation-icon">✓</div>
+                            <h3>Request Submitted Successfully</h3>
+                            <p>Thank you for your interest in <strong id="confirmed-product"></strong>.</p>
+                            <p>We have received your information request and will respond within 24 business hours.</p>
+                            <p>A confirmation email has been sent to <strong id="confirmed-email"></strong>.</p>
+                            <div class="confirmation-actions">
+                                <a href="Concepts.html" class="btn btn-primary">View More Products</a>
+                                <a href="index.html" class="btn btn-secondary">Return to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-notice">
+                    <h4>🔒 Security & Privacy</h4>
+                    <p>Your information is transmitted securely and will only be used to respond to your inquiry. BRITC maintains strict data protection protocols in compliance with federal security standards.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Brooks Innovation and Technology Consulting LLC</h4>
+                    <p>Founded November 21, 2025 | Hawaii</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Concepts.html">Concepts</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: brooksinnovationandtechnologyc@gmail.com</p>
+                    <p>Phone: 1 (224) 237-6324</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Brooks Innovation and Technology Consulting LLC (BRITC). All rights reserved.</p>
+                <p class="legal-notice">All content on this website is proprietary and protected under U.S. copyright law and other applicable intellectual property laws. No portion of this website or its materials may be reproduced, distributed, or used without prior written permission from BRITC.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Get product name from URL parameter
+        function getProductFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('product') || 'General Inquiry';
+            return product;
+        }
+
+        // Set product name and subject on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const productName = getProductFromURL();
+            
+            // Display product name
+            document.getElementById('product-name').textContent = productName;
+            
+            // Set hidden field for product
+            document.getElementById('product-field').value = productName;
+            
+            // Set dynamic subject line for Formspree
+            document.getElementById('form-subject').value = `BRITC Inquiry: ${productName}`;
+        });
+
+        // Enhanced form handling with Formspree
+        const form = document.getElementById('info-request-form');
+        const formContent = document.getElementById('form-content');
+        const confirmationMessage = document.getElementById('confirmation-message');
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success - show confirmation
+                    const productName = document.getElementById('product-name').textContent;
+                    const email = document.getElementById('contact-email').value;
+                    
+                    document.getElementById('confirmed-product').textContent = productName;
+                    document.getElementById('confirmed-email').textContent = email;
+                    
+                    formContent.style.display = 'none';
+                    confirmationMessage.style.display = 'block';
+                    
+                    // Scroll to confirmation
+                    confirmationMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Error from Formspree
+                    const data = await response.json();
+                    status.style.display = 'block';
+                    status.className = 'form-error';
+                    status.innerHTML = `<strong>Error:</strong> ${data.error || 'Unable to submit form. Please try again or email us directly.'}`;
+                }
+            } catch (error) {
+                // Network error
+                status.style.display = 'block';
+                status.className = 'form-error';
+                status.innerHTML = '<strong>Error:</strong> Network issue. Please try again or contact us at brooksinnovationandtechnologyc@gmail.com';
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    </script>
+</body>
+</html>
