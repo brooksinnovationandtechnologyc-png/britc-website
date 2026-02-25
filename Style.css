@@ -219,12 +219,14 @@ nav a.careers-link:hover {
 .btn-primary {
     background-color: var(--accent-blue);
     color: var(--white);
+    border-color: var(--accent-blue);
 }
 
 .btn-primary:hover {
     background-color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    color: var(--accent-blue);
 }
 
 .btn-secondary {
@@ -1935,3 +1937,28 @@ footer {
     display: flex !important;
 }
 
+#return-home-btn {
+    background-color: #ffffff;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+           
+}
+#return-home-btn:hover {
+    background-color: #0066cc;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+#view-concepts-btn {
+    background-color: #ffffff;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+#view-concepts-btn:hover {
+    background-color: #0066cc;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
